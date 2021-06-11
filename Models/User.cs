@@ -21,7 +21,9 @@ namespace DatabaseFirstLINQ.Models
         public virtual ICollection<ShoppingCart> ShoppingCarts { get; set; }
         public virtual ICollection<UserRole> UserRoles { get; set; }
 
-        //internal class Id
+        
+
+       // internal class Id
         //{
         //}
     }

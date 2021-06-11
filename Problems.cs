@@ -2,6 +2,7 @@
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using DatabaseFirstLINQ.Models;
+using System.Collections.Generic;
 
 namespace DatabaseFirstLINQ
 {
@@ -43,11 +44,11 @@ namespace DatabaseFirstLINQ
             // Write a LINQ query that returns the number of users in the Users table.
             // HINT: .ToList().Count
 
+            var data = _context.Users.ToList();
+            
+            int count = data.Count;
+            Console.WriteLine(count);
 
-            User usersInstance = new User();
-            int usersCount = usersInstance.Email.ToList().Count;
-            Console.WriteLine(usersCount);
-            Console.ReadLine();
 
         }
 
