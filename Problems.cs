@@ -22,8 +22,8 @@ namespace DatabaseFirstLINQ
             ProblemFour();
             ProblemFive();
             ProblemSix();
-            //ProblemSeven();
-            //ProblemEight();
+            ProblemSeven();
+            ProblemEight();
             //ProblemNine();
             //ProblemTen();
             //ProblemEleven();
@@ -131,23 +131,29 @@ namespace DatabaseFirstLINQ
 
         //// <><><><><><><><> R Actions (Read) with Foreign Keys <><><><><><><><><>
 
-        //private void ProblemSeven()
-        //{
-        //    // Write a LINQ query that retreives all of the users who are assigned to the role of Customer.
-        //    // Then print the users email and role name to the console.
-        //    var customerUsers = _context.UserRoles.Include(ur => ur.Role).Include(ur => ur.User).Where(ur => ur.Role.RoleName == "Customer");
-        //    foreach (UserRole userRole in customerUsers)
-        //    {
-        //        Console.WriteLine($"Email: {userRole.User.Email} Role: {userRole.Role.RoleName}");
-        //    }
-        //}
+        private void ProblemSeven()
+        {
+            // Write a LINQ query that retreives all of the users who are assigned to the role of Customer.
+            // Then print the users email and role name to the console.
+            var customerUsers = _context.UserRoles.Include(ur => ur.Role).Include(ur => ur.User).Where(ur => ur.Role.RoleName == "Customer");
+            foreach (UserRole userRole in customerUsers)
+            {
+                Console.WriteLine($"Email: {userRole.User.Email} Role: {userRole.Role.RoleName}");
+            }
+        }
 
-        //private void ProblemEight()
-        //{
-        //    // Write a LINQ query that retreives all of the products in the shopping cart of the user who has the email "afton@gmail.com".
-        //    // Then print the product's name, price, and quantity to the console.
+        private void ProblemEight()
+        {
+            // Write a LINQ query that retreives all of the products in the shopping cart of the user who has the email "afton@gmail.com".
+            // Then print the product's name, price, and quantity to the console.
 
-        //}
+            var UserProducts = _context.ShoppingCarts.Include(sc => sc.Product).Include(sc => sc.User).Where(sc => sc.User.Email == "afton@gmail.com");
+            foreach (var product in UserProducts) 
+            {
+                Console.WriteLine(product.Product.Name + " " + product.Product.Price + " " + product.Quantity);
+            }
+
+        }
 
         //private void ProblemNine()
         //{
