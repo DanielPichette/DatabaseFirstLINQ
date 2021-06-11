@@ -250,11 +250,15 @@ namespace DatabaseFirstLINQ
             _context.SaveChanges();
         }
 
-        //private void ProblemSixteen()
-        //{
-        //    // Update the price of the product you created to something different using LINQ.
+        private void ProblemSixteen()
+        {
+            // Update the price of the product you created to something different using LINQ.
 
-        //}
+            var product = _context.Products.Where(u => u.Name == "Iphone 50").SingleOrDefault();
+            product.Price = 5;
+            _context.Products.Update(product);
+            _context.SaveChanges();
+        }
 
         //private void ProblemSeventeen()
         //{
