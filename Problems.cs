@@ -26,7 +26,7 @@ namespace DatabaseFirstLINQ
             ProblemEight();
             ProblemNine();
             ProblemTen();
-            //ProblemEleven();
+            ProblemEleven();
             //ProblemTwelve();
             //ProblemThirteen();
             //ProblemFourteen();
@@ -180,23 +180,23 @@ namespace DatabaseFirstLINQ
                 Console.WriteLine($"{employee.User.Email} {employee.Product.Name} {employee.Product.Price} {employee.Quantity}");
             }
         }
-            
+
 
         //// <><><><><><><><> CUD (Create, Update, Delete) Actions <><><><><><><><><>
 
         //// <><> C Actions (Create) <><>
 
-        //private void ProblemEleven()
-        //{
-        //    // Create a new User object and add that user to the Users table using LINQ.
-        //    User newUser = new User()
-        //    {
-        //        Email = "david@gmail.com",
-        //        Password = "DavidsPass123"
-        //    };
-        //    _context.Users.Add(newUser);
-        //    _context.SaveChanges();
-        //}
+        private void ProblemEleven()
+        {
+            // Create a new User object and add that user to the Users table using LINQ.
+            User newUser = new User()
+            {
+                Email = "david@gmail.com",
+                Password = "DavidsPass123"
+            };
+            _context.Users.Add(newUser);
+            _context.SaveChanges();
+        }
 
         //private void ProblemTwelve()
         //{
